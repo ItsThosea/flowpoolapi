@@ -1,6 +1,7 @@
 plugins {
     id "java-library"
     id "io.freefair.lombok" version "8.10"
+    id "maven-publish"
 }
 
 group = "me.thosea.flowpool"
@@ -18,4 +19,24 @@ dependencies {
     testImplementation "org.mockito:mockito-core:5.11.0"
 }
 
+java.withSourcesJar()
+java.withJavadocJar()
 test.useJUnitPlatform()
+
+publishing {
+    repositories {
+        maven {
+            name = "teamCelestialPublicMaven"
+            url = "https://maven.teamcelestial.org/public"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}

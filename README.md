@@ -43,7 +43,14 @@ Alongside `PoolToggle`, there's `PoolList` and `PoolStack` for basic collections
 Find more about it in the [wiki](https://github.com/ItsThosea/flowpoolapi/wiki)!
 
 ## How do I use it?
-TODO link gradle/maven
+Add the maven repo: 
+```groovy
+maven {
+    name "teamcelestial-public"
+    url "https://maven.teamcelestial.org/public"
+}
+```
+And find the latest Gradle/Maven dependency here: https://maven.teamcelestial.org/#/public/me/thosea/flowpool/flowpoolapi
 
 ### How'd you get the name?
 An AI generated it.
