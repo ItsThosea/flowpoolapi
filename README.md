@@ -52,5 +52,8 @@ maven {
 ```
 And find the latest Gradle/Maven dependency here: https://maven.teamcelestial.org/#/public/me/thosea/flowpool/flowpoolapi
 
+### Javadocs?
+https://maven.teamcelestial.org/javadoc/public/me/thosea/flowpool/flowpoolapi/1.0.0
+
 ### How'd you get the name?
 An AI generated it.
