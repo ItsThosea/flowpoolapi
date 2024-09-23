@@ -1,0 +1,21 @@
+plugins {
+    id "java-library"
+    id "io.freefair.lombok" version "8.10"
+}
+
+group = "me.thosea.flowpool"
+version = "1.0.0"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains:annotations:24.0.0"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.7.1"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher:1.10.1"
+    testImplementation "org.mockito:mockito-core:5.11.0"
+}
+
+test.useJUnitPlatform()
