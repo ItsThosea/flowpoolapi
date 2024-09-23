@@ -50,7 +50,8 @@ maven {
     url "https://maven.teamcelestial.org/public"
 }
 ```
-And find the latest Gradle/Maven dependency here: https://maven.teamcelestial.org/#/public/me/thosea/flowpool/flowpoolapi
+And find the latest Gradle/Maven dependency here: https://maven.teamcelestial.org/#/public/me/thosea/flowpool/flowpoolapi<br>
+It requires Java 17 or higher.
 
 ### Javadocs?
 https://maven.teamcelestial.org/javadoc/public/me/thosea/flowpool/flowpoolapi/1.0.0
