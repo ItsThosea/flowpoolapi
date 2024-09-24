@@ -36,6 +36,9 @@ public class PoolPipeline<T, R> extends AbstractPoolCollection<T> {
 	protected final Map<HandlerPool, Runnable> queuedModifications = new HashMap<>();
 
 	protected PipelineContext context = new PipelineContext();
+	/**
+	 * Execution depth. If not executing, this will be zero.
+	 */
 	@Getter protected int depth = 0;
 
 	/**
