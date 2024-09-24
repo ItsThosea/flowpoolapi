@@ -54,7 +54,7 @@ And find the latest Gradle/Maven dependency here: https://maven.teamcelestial.or
 It requires Java 17 or higher.
 
 ### Javadocs?
-https://maven.teamcelestial.org/javadoc/public/me/thosea/flowpool/flowpoolapi/1.0.0
+Find the javadoc link for your version on the release page: https://github.com/ItsThosea/flowpoolapi/releases
 
 ### Thread safety?
 None of these are thread-safe! You are responsible for enforcing thread safety yourself.
