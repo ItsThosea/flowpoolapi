@@ -16,9 +16,24 @@ import java.util.function.BiConsumer;
 @Setter
 @Getter @Accessors(fluent = true, chain = true)
 public class PoolStack<T> extends AbstractPoolCollection<T> {
-	private final ArrayDeque<PoolEntry<T>> stack = new ArrayDeque<>();
+	private final ArrayDeque<PoolEntry<T>> stack;
 	private BiConsumer<PoolStack<T>, PoolEntry<T>> pushCallback;
 	private BiConsumer<PoolStack<T>, PoolEntry<T>> popCallback;
+
+	/**
+	 * Constructs a new PoolStack with an initial capacity of {@link AbstractPoolCollection#DEFAULT_COLLECTION_SIZE}.
+	 */
+	public PoolStack() {
+		this.stack = new ArrayDeque<>(DEFAULT_COLLECTION_SIZE);
+	}
+
+	/**
+	 * Constructs a new PoolStack with the specified initial capacity.
+	 * @param initialCapacity initial capacity
+	 */
+	public PoolStack(int initialCapacity) {
+		this.stack = new ArrayDeque<>(initialCapacity);
+	}
 
 	/**
 	 * Gets the object that was last {@code push}ed onto this pushable,

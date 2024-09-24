@@ -17,9 +17,24 @@ import java.util.function.BiConsumer;
 @Setter
 @Getter @Accessors(fluent = true, chain = true)
 public class PoolList<T> extends AbstractPoolCollection<T> {
-	private final List<PoolEntry<T>> list = new ArrayList<>();
+	private final List<PoolEntry<T>> list;
 	private BiConsumer<PoolList<T>, PoolEntry<T>> pushCallback;
 	private BiConsumer<PoolList<T>, PoolEntry<T>> popCallback;
+
+	/**
+	 * Constructs a new PoolList with an initial capacity of {@link AbstractPoolCollection#DEFAULT_COLLECTION_SIZE}.
+	 */
+	public PoolList() {
+		this.list = new ArrayList<>(DEFAULT_COLLECTION_SIZE);
+	}
+
+	/**
+	 * Constructs a new PoolList with the specified initial capacity.
+	 * @param initialCapacity initial capacity
+	 */
+	public PoolList(int initialCapacity) {
+		this.list = new ArrayList<>(initialCapacity);
+	}
 
 	/**
 	 * Pushes the object to the back of the list.

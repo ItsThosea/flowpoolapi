@@ -15,6 +15,12 @@ import java.util.List;
  */
 @Getter
 public abstract class AbstractPoolCollection<T> implements IPoolPushable<T> {
+	/**
+	 * The default collection size for all built-in {@link IPoolPushable}s.<br>
+	 * Four.
+	 */
+	public static final int DEFAULT_COLLECTION_SIZE = 4;
+
 	// abstract to force superclasses to write docs
 	@Override
 	public abstract void push(HandlerPool pool, T obj);

@@ -24,7 +24,7 @@ import java.util.function.BiFunction;
  * @param <R> return type, this should be returned by the handler type
  */
 public class PoolPipeline<T, R> extends AbstractPoolCollection<T> {
-	protected final List<PoolEntry<T>> list = new ArrayList<>();
+	protected final List<PoolEntry<T>> list;
 
 	@Accessors(fluent = true)
 	@Getter @Setter
@@ -40,6 +40,21 @@ public class PoolPipeline<T, R> extends AbstractPoolCollection<T> {
 	 * Execution depth. If not executing, this will be zero.
 	 */
 	@Getter protected int depth = 0;
+
+	/**
+	 * Constructs a new PoolPipeline with an initial capacity of {@link AbstractPoolCollection#DEFAULT_COLLECTION_SIZE}.
+	 */
+	public PoolPipeline() {
+		this.list = new ArrayList<>(DEFAULT_COLLECTION_SIZE);
+	}
+
+	/**
+	 * Constructs a new PoolPipeline with the specified initial capacity.
+	 * @param initialCapacity initial capacity
+	 */
+	public PoolPipeline(int initialCapacity) {
+		this.list = new ArrayList<>(initialCapacity);
+	}
 
 	/**
 	 * Pushes the handler to the back of the list.<br>

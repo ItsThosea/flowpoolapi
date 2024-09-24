@@ -18,9 +18,24 @@ import java.util.function.BiConsumer;
 @Getter
 @Setter
 public class PoolToggle implements IPoolPushable<Void> {
-	private final Set<HandlerPool> pushedBy = new HashSet<>();
+	private final Set<HandlerPool> pushedBy;
 	private BiConsumer<PoolToggle, HandlerPool> pushCallback;
 	private BiConsumer<PoolToggle, HandlerPool> popCallback;
+
+	/**
+	 * Constructs a new PoolToggle with an initial capacity of {@link AbstractPoolCollection#DEFAULT_COLLECTION_SIZE}.
+	 */
+	public PoolToggle() {
+		this.pushedBy = new HashSet<>(AbstractPoolCollection.DEFAULT_COLLECTION_SIZE);
+	}
+
+	/**
+	 * Constructs a new PoolToggle with the specified initial capacity.
+	 * @param initialCapacity initial capacity
+	 */
+	public PoolToggle(int initialCapacity) {
+		this.pushedBy = new HashSet<>(initialCapacity);
+	}
 
 	/**
 	 * The passed object will be ignored.
