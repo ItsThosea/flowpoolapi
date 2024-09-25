@@ -145,7 +145,7 @@ public class PoolPipeline<T, R> extends AbstractPoolCollection<T> {
 
 	/**
 	 * Executes the pipeline and returns nothing. Example: <pre>{@code
-	 * pipeline.execute((initial, ctx) -> {
+	 * pipeline.executeReversed((initial, ctx) -> {
 	 *   initial.call(someParameter, 5, ctx);
 	 * }, (parameter, num, ctx) -> {
 	 *     // Don't use ctx.pass() here!
@@ -197,7 +197,7 @@ public class PoolPipeline<T, R> extends AbstractPoolCollection<T> {
 
 	/**
 	 * Executes the pipeline and returns the result. Example: <pre>{@code
-	 * String result = pipeline.execute((initial, ctx) -> {
+	 * String result = pipeline.executeReversed((initial, ctx) -> {
 	 *   return initial.call(someParameter, 5, ctx);
 	 * }, (parameter, num, ctx) -> {
 	 *     // Don't use ctx.pass() here!
