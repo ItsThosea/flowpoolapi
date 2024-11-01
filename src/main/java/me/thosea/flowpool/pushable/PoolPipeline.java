@@ -329,7 +329,7 @@ public class PoolPipeline<T, R> extends AbstractPoolCollection<T> {
 	@Override
 	protected void doAdd(PoolEntry<T> entry, boolean reverse) {
 		// list is executed in reverse order,
-		// we don't use a pushable for better iteration performance (?)
+		// we don't use a stack for better iteration performance (?)
 
 		if(reverse) { // pushLast
 			list.add(0, entry);
